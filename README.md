@@ -1,9 +1,11 @@
 Automated Plant Watering System using
 IoT and Robotics
+
 1. Introduction
 Watering plants regularly is essential for their healthy growth, but many times plants
 either get over-watered or under-watered due to irregular human intervention. To solve this, an
 automated plant watering system is developed using IoT (Internet of Things) and Robotics.
+
 2. Components Required
 * ESP32 (or NodeMCU ESP8266)
 * Soil Moisture Sensor (capacitive recommended)
@@ -12,16 +14,20 @@ automated plant watering system is developed using IoT (Internet of Things) and 
 * Servo Motor (SG90/MG995)
 * Power Supply (12V & 5V)
 * Jumper wires, tubing
+
 3. System Design & Working
-1. Soil moisture sensor detects soil water content.
-2. ESP32 processes data and uploads it to Blynk IoT Cloud.
-3. If soil moisture is below threshold, relay switches ON pump.
-4. Servo motor rotates pipe towards selected pot.
-5. User can monitor via Blynk app4. Circuit Diagram
+     * Soil moisture sensor detects soil water content.
+     * ESP32 processes data and uploads it to Blynk IoT Cloud.
+     * If soil moisture is below threshold, relay switches ON pump.
+     * Servo motor rotates pipe towards selected pot.
+     * User can monitor via Blynk app
+
+4. Circuit Diagram
 Soil Sensor: VCC→3.3V, GND→GND, A0→GPIO34
 Relay: VCC→5V, GND→GND, IN→GPIO26
 Pump: +→Relay COM, -→12V(-), Relay NO→12V(+)
 Servo: VCC→5V, GND→GND, Signal→GPIO27
+
 5. Program Code (ESP32 + Blynk IoT)
 #define BLYNK_TEMPLATE_ID "YourTemplateID"
 #define BLYNK_DEVICE_NAME "Plant Watering System"
@@ -71,21 +77,25 @@ void loop()
 Blynk.run();
 timer.run();
 }
+
 6. IoT Dashboard
 In Blynk app:
 * Gauge (V0) → Soil Moisture (%)
 * LED (V1) → Pump Status
 * Button → Manual Pump Control
+
 7. Advantages
 -> Fully automatic watering
 -> IoT remote monitoring
 -> Robotics allows watering multiple pots
 -> Prevents overwatering/underwatering
 -> Expandable with DHT22 for climate monitoring
+
 8. Applications
 * Smart home gardening
 * Greenhouses & nurseries
 * Agricultural automation* Rooftop gardens
+
 9. Conclusion
 This Automated Plant Watering System using IoT and Robotics ensures efficient plant
 growth through precision irrigation while reducing human effort and water wastage.
